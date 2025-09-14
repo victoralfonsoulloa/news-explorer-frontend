@@ -1,9 +1,16 @@
-import { Inter } from 'next/font/google';
+import { Roboto, Roboto_Slab, Inter } from "next/font/google";
 
-export const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
+export const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
 });
 
-export const roboto = inter; // Placeholder - cambiaremos esto después
+export const robotoSlab = Roboto_Slab({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+export const inter = Inter({
+  subsets: ["latin"],
+  weight: "400",
+});
