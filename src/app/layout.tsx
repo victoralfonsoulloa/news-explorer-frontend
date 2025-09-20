@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { FC, PropsWithChildren } from "react";
 import { roboto } from "@/vendor/fonts";
 import "@/styles/globals.css";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,7 +24,10 @@ export const viewport: Viewport = {
 const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang="es">
-      <body className={`${roboto.className} antialiased`}>{children}</body>
+      <body className={`${roboto.className} antialiased`}>
+        {children}
+        <Footer />
+        </body>
     </html>
   );
 };
