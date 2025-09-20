@@ -1,6 +1,7 @@
 import "@/styles/about.css";
 import { robotoSlab } from "@/vendor/fonts";
 import Image from "next/image";
+import Slider from "./Slider";
 
 export default function About() {
   return (
@@ -20,6 +21,7 @@ export default function About() {
           Este bloque describe al autor del proyecto. Aquí debe indicar tu
           nombre, a qué te dedicas y qué tecnologías de desarrollo conoces.
           <br />
+          <Slider />
           <br />
           También puedes hablar de tu experiencia con Practicum, de lo que
           aprendiste allí y de cómo puedes ayudar a los clientes potenciales.
