@@ -1,26 +1,28 @@
 "use client";
 
-import NotFound from "@/components/NotFound";
-import Preloader from "@/components/PreLoader";
 import Header from "@/components/Header";
-import "../styles/globals.css";
-import Footer from "@/components/Footer";
+import News from "@/components/News";
+import NotFound from "@/components/NotFound";
+import { useState } from "react";
 
 export default function Main() {
+const [news, setNews] = useState(["test"]);
+
   return (
     <>
       <Header />
-      <main>
-      {/* <Preloader />
-      <div className="h-[374px]">
-        <NotFound
-          title="No se encontró nada"
-          description="Lo sentimos, pero no hay nada que coincida con tus términos de búsqueda."
-        />
-      </div> */}
+      <main className="flex flex-col">
+        {news.length > 0 ? (
+          <News title="Resultados de la búsqueda"></News>
+        ) : (
+          <div className="h-[374px]">
+            <NotFound
+              title="No se encontró nada"
+              description="Lo sentimos, pero no hay nada que coincida con tus términos de búsqueda."
+            />
+          </div>
+        )}
       </main>
-      {/* <Footer /> */}
     </>
   );
 }
-
