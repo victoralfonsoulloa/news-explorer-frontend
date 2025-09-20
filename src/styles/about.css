@@ -16,6 +16,7 @@
 
 .about__info {
   row-gap: 24px;
+  justify-content: center;
 }
 
 .about__title {

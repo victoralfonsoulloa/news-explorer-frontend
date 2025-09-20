@@ -11,6 +11,8 @@ import {
   BiLogoTypescript,
   BiLogoTailwindCss,
   BiLogoPostgresql,
+  BiLogoAws,
+  BiLogoGraphql,
 } from "react-icons/bi";
 import { SiMysql, SiMongodb } from "react-icons/si";
 import "@/styles/slider.css";
@@ -24,10 +26,11 @@ export default function Slider() {
     { name: "React", icon: <FaReact /> },
     { name: "Bootstrap", icon: <FaBootstrap /> },
     { name: "Tailwind CSS", icon: <BiLogoTailwindCss /> },
-    { name: "PHP", icon: <FaPhp /> },
     { name: "MySQL", icon: <SiMysql /> },
     { name: "PostgreSQL", icon: <BiLogoPostgresql /> },
     { name: "MongoDB", icon: <SiMongodb /> },
+    { name: "AWS", icon: <BiLogoAws /> },
+    { name: "GraphQL", icon: <BiLogoGraphql /> },
   ];
 
   return (
