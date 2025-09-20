@@ -1,0 +1,29 @@
+@import url("./globals.css");
+
+.about {
+  justify-content: center;
+  align-items: center;
+  min-height: 624px;
+  column-gap: 56px;
+}
+
+.about__photo {
+  width: 464px !important;
+  height: 464px !important;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about__info {
+  row-gap: 24px;
+}
+
+.about__title {
+  font-size: var(--font-size-xlarge);
+  line-height: var(--line-height-small);
+}
+
+.about__description {
+  font-size: var(--font-size-neutral);
+  line-height: var(--line-height-large);
+}
