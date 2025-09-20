@@ -52,5 +52,15 @@ body {
   min-width: 320px;
   display: flex;
   flex-direction: column;
-  position: relative;
+  min-width: 320px;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+  }
+}
+
+@media screen and (max-width: 576px) {
+  body {
+  }
 }

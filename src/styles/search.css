@@ -1,26 +1,28 @@
 @import url("./globals.css");
 
-.preloader {
+.searchbar {
+  background-color: var(--background-primary);
   justify-content: center;
   align-items: center;
-  background-color: var(--background-secondary);
 }
 
-.preloader__icon {
-  display: block;
-  border: 1px solid var(--color-extra);
-  border-bottom-color: var(--color-primary);
-  animation: spin 0.75s infinite linear;
+.searchbar__input {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-xlarge);
+  color: var(--color-primary);
 }
 
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.preloader__text {
-  font-size: var(--font-size-neutral);
+.searchbar__input::placeholder {
   color: var(--color-extra);
+}
+
+.searchbar__button {
+  background-color: var(--button-primary);
+  font-size: var(--font-size-neutral);
   line-height: var(--line-height-large);
+  cursor: pointer;
+}
+
+.searchbar__button:hover {
+  background-color: var(--button-primary-hover);
 }
