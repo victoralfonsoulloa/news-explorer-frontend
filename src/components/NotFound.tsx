@@ -4,12 +4,13 @@ import Image from "next/image";
 interface NotFoundProps {
   title: string;
   description: string;
+  children?: React.ReactNode;
 }
 
 export default function NotFound(props: NotFoundProps) {
-  const { title, description } = props;
+  const { title, description, children } = props;
   return (
-    <div className="not-found flex flex-col text-center h-[374px]">
+    <div className="not-found flex flex-col text-center h-full w-full">
       <Image
         src="/not-found_icon.png"
         width={82.5}
@@ -21,6 +22,7 @@ export default function NotFound(props: NotFoundProps) {
       <p className="not-found__description font-normal w-[356px]">
         {description}
       </p>
+      {children}
     </div>
   );
 }
