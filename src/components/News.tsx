@@ -2,7 +2,7 @@
 
 import "@/styles/news.css";
 import { robotoSlab } from "@/vendor/fonts";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import Preloader from "@/components/PreLoader";
 import NewsItem from "./NewsItem";
 
@@ -19,11 +19,11 @@ interface NewsProps {
   title?: string;
   news?: NewsItemData[];
   children?: ReactNode;
+  loader: boolean;
 }
 
 export default function News(props: NewsProps) {
-  const { title, children, news } = props;
-  const [loader] = useState(false);
+  const { title, children, news, loader } = props;
 
   return (
     <section className="news-cards flex flex-col px-[104px] py-[65px]">

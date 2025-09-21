@@ -17,9 +17,11 @@ interface NewsItemData {
 
 export default function Main() {
   const [news, setNews] = useState<NewsItemData[]>([]);
-  const [search] = useState(true);
+  const [search, setSearch] = useState(false);
+  const [loader, setLoader] = useState(false);
 
   useEffect(() => {
+    setLoader(true);
     setNews([
       {
         id: 1,
@@ -58,16 +60,21 @@ export default function Main() {
         reporter: "national geographic",
       },
     ]);
+    setLoader(false);
   }, []);
 
   return (
     <>
-      <Header />
+      <Header setSearch={setSearch} />
       <main className="flex flex-col">
         {search && (
           <>
             {news.length > 0 ? (
-              <News title="Resultados de la búsqueda" news={news}>
+              <News
+                title="Resultados de la búsqueda"
+                news={news}
+                loader={loader}
+              >
                 <button className="news-cards__button rounded-full w-[288px] h-[64px] mt-[65px] mb-[15px]">
                   Ver más
                 </button>
