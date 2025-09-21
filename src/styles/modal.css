@@ -9,7 +9,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 999;
   opacity: 1;
   transition: opacity 0.5s ease;
   @starting-style {
@@ -21,8 +21,9 @@
   align-items: center;
   background-color: var(--background-primary);
   width: 420px;
-  height: 383px;
+  height: 411px;
   position: fixed;
+  padding-bottom: 0 !important;
 }
 
 .modal__close {
@@ -41,4 +42,30 @@
   font-size: var(--font-size-extra-2);
   color: var(--color-primary);
   align-self: flex-start;
+}
+
+.modal__text {
+  font-size: var(--font-size-small);
+  color: var(--color-primary);
+  text-align: center !important;
+  align-self: center;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 28px;
+}
+
+.modal__text * {
+  text-align: center !important;
+}
+
+.modal__link {
+  color: var(--button-primary);
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.modal__link:hover {
+  opacity: 0.8;
+  color: var(--button-primary);
 }

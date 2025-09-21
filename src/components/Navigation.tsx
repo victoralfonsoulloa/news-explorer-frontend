@@ -6,6 +6,7 @@ import ModalWithForm from "./ModalWithForm";
 import { robotoSlab } from "@/vendor/fonts";
 import { FormEvent, KeyboardEventHandler, ReactNode, useState } from "react";
 import Login from "./Login";
+import Register from "./Register";
 
 export default function Navigation() {
   const [popup, setPopup] = useState<{
@@ -29,6 +30,11 @@ export default function Navigation() {
   const loginPopup = {
     title: "Iniciar sesión",
     children: <Login />,
+  };
+
+  const registerPopup = {
+    title: "Inscribirse", 
+    children: <Register />,
   };
 
   return (
@@ -56,6 +62,7 @@ export default function Navigation() {
       {popup && (
         <ModalWithForm
           title={popup.title}
+          openPopup={openPopup}
           closePopup={closePopup}
           handleEscClose={handleEscClose}
         >

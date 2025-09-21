@@ -28,6 +28,20 @@
   --font-size-extra-3: 1.875rem; /* 30px */
   --font-size-extra-4: 2rem; /* 32px */
   --font-size-extra-5: 2.25rem; /* 36px */
+    --font-size-xxsmall: 0.75rem; /* 12px */
+  --font-size-xsmall: 0.875rem; /* 14px */
+  --font-size-small: 1rem; /* 16px */
+  --font-size-neutral: 1.125rem; /* 18px */
+  --font-size-medium: 1.25rem; /* 20px */
+  --font-size-large: 1.625rem; /* 26px */
+  --font-size-xlarge: 2.5rem; /* 40px */
+  --font-size-xxlarge: 3.75rem; /* 60px */
+
+  --font-size-extra-1: 1.375rem; /* 22px */
+  --font-size-extra-2: 1.5rem; /* 24px */
+  --font-size-extra-3: 1.875rem; /* 30px */
+  --font-size-extra-4: 2rem; /* 32px */
+  --font-size-extra-5: 2.25rem; /* 36px */
 
   --line-height-xxsmall: 1.067;
   --line-height-xsmall: 1.1;
@@ -53,5 +67,4 @@ body {
   min-width: 320px;
   display: flex;
   flex-direction: column;
-  min-width: 320px;
 }
