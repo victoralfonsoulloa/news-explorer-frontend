@@ -6,13 +6,31 @@ import Slider from "./Slider";
 export default function About() {
   return (
     <section className="about flex">
-      <Image
-        src="/about.jpg"
-        width={464}
-        height={464}
-        alt="Profile picture"
-        className="about__photo rounded-full"
-      />
+      <div className="svg-wrapper">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 320 320"
+          className="svg-border"
+        >
+          <rect
+            x="10"
+            y="10"
+            width="300"
+            height="300"
+            rx="150"
+            ry="150"
+            className="shape"
+          />
+        </svg>
+        <Image
+          src="/about.jpg"
+          width={300}
+          height={300}
+          alt="Profile picture"
+          className="about__photo"
+        />
+      </div>
       <div className="about__info flex flex-col w-[600px]">
         <h3 className={`about__title ${robotoSlab.className}`}>
           Acerca del autor
