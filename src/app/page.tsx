@@ -48,6 +48,15 @@ export default function Main() {
         image: "/news_01.png",
         reporter: "national geographic",
       },
+      {
+        id: 4,
+        title: "La naturaleza te hace mejor",
+        description:
+          "Milenios atrás ya nos percatamos de ello: el sonido del océano, los aromas de un bosque, la forma en que la luz del sol moteada baila entre las hojas.",
+        date: "19 de febrero de 2019",
+        image: "/news_01.png",
+        reporter: "national geographic",
+      },
     ]);
   }, []);
 
@@ -59,7 +68,7 @@ export default function Main() {
           <>
             {news.length > 0 ? (
               <News title="Resultados de la búsqueda" news={news}>
-                <button className="news-cards__button rounded-full w-[288px] h-[64px] mt-[65px] mb-[15px] font-medium">
+                <button className="news-cards__button rounded-full w-[288px] h-[64px] mt-[65px] mb-[15px]">
                   Ver más
                 </button>
               </News>
