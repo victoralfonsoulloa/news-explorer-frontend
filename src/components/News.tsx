@@ -35,7 +35,7 @@ export default function News(props: NewsProps) {
         {title}
       </h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center w-full">
+      <div className="news-cards__container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center w-full">
         {/* Se pasan los props de cada item con el operador spread (...) */}
         {news && news.map((item) => <NewsItem key={item.id} {...item} />)}
       </div>
