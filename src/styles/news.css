@@ -225,11 +225,19 @@
   .news-item__title {
     font-size: var(--font-size-extra-1);
     line-height: var(--line-height-xsmall);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
   }
 
   .news-item__description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     -webkit-line-clamp: 4;
+    line-clamp: 4;
   }
 }
 

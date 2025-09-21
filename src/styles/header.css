@@ -70,6 +70,12 @@
   }
 }
 
+@media screen and (max-width: 452px) {
+  .header__main {
+    width: auto;
+  }
+}
+
 @media screen and (max-width: 360px) {
   .header {
     background-image: url("../../public/bg_header-sm.png");
