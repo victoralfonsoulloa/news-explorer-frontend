@@ -20,5 +20,5 @@ export default function Header() {
         <SearchBar />
       </div>
     </header>
-  );    
+  );
 }

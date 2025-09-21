@@ -6,9 +6,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="footer flex py-[32px] px-[104px]">
-      <span className="footer__copyright">
-        &#169; 2025 Victor Ulloa Perez
-      </span>
+      <span className="footer__copyright">&#169; 2025 Victor Ulloa Perez</span>
       <div className="footer__links flex">
         <Link href="/" className="footer__link">
           Inicio
@@ -24,10 +22,7 @@ export default function Footer() {
             </Link>
           </li>
           <li className="footer__social-link">
-            <Link
-              href="https://www.instagram.com/victorulloa/"
-              target="_blank"
-            >
+            <Link href="https://www.instagram.com/victorulloa/" target="_blank">
               <RiInstagramFill />
             </Link>
           </li>

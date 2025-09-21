@@ -7,14 +7,18 @@ import About from "@/components/About";
 import { useState } from "react";
 
 export default function Main() {
-const [news, setNews] = useState(["test"]);
+  const [news] = useState(["test"]);
 
   return (
     <>
       <Header />
       <main className="flex flex-col">
         {news.length > 0 ? (
-          <News title="Resultados de la búsqueda"></News>
+          <News title="Resultados de la búsqueda">
+            <button className="news-cards__button rounded-full w-[288px] h-[64px] mt-[65px] mb-[15px] font-medium">
+              Ver más
+            </button>
+          </News>
         ) : (
           <div className="h-[374px]">
             <NotFound

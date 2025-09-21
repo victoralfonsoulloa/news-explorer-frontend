@@ -18,15 +18,15 @@ export default function About() {
           Acerca del autor
         </h3>
         <p className="about__description">
-          ¡Hola! Soy Victor, Ingeniero de Software Asociado en Guild. Soy 
-          apasionado por la programación y un aprendiz de por vida, impulsado 
+          ¡Hola! Soy Victor, Ingeniero de Software Asociado en Guild. Soy
+          apasionado por la programación y un aprendiz de por vida, impulsado
           por el deseo de construir y crear soluciones innovadoras.
           <br />
           <br />
-          Con experiencia en las industrias de hospitalidad y aerolíneas, 
-          aporto una perspectiva única orientada al servicio para la resolución 
-          de problemas y la colaboración. Mi objetivo a largo plazo es ser mentor 
-          de minorías en tecnología y ayudar a crear más oportunidades y 
+          Con experiencia en las industrias de hospitalidad y aerolíneas, aporto
+          una perspectiva única orientada al servicio para la resolución de
+          problemas y la colaboración. Mi objetivo a largo plazo es ser mentor
+          de minorías en tecnología y ayudar a crear más oportunidades y
           representación en la industria.
           <br />
           <br />

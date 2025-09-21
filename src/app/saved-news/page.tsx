@@ -6,7 +6,7 @@ import NotFound from "@/components/NotFound";
 import { useState } from "react";
 
 export default function SavedNews() {
-  const [savedNews, setSavedNews] = useState([]);
+  const [savedNews] = useState([]);
 
   return (
     <>

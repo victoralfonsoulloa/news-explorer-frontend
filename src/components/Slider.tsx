@@ -3,7 +3,6 @@ import {
   FaJsSquare,
   FaBootstrap,
   FaReact,
-  FaPhp,
   FaCss3Alt,
   FaHtml5,
 } from "react-icons/fa";
