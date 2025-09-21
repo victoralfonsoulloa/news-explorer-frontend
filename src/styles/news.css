@@ -233,8 +233,14 @@
   }
 }
 
+@media screen and (max-width: 576px) {
+  .news-cards__container {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .news-cards__container {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
   }
 }
