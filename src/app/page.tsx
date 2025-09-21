@@ -18,10 +18,63 @@ interface NewsItemData {
 }
 
 export default function Main() {
-  const [news, setNews] = useState<NewsItemData[]>([]);
+  const [allNews, setAllNews] = useState<NewsItemData[]>([]);
+  const [displayedNews, setDisplayedNews] = useState<NewsItemData[]>([]);
   const [search, setSearch] = useState(false);
   const [loader, setLoader] = useState(false);
   const [query, setQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(3);
+
+  // Function to determine items per page based on screen size
+  const getItemsPerPage = () => {
+    if (typeof window !== 'undefined') {
+      const width = window.innerWidth;
+      // 2 columns (md): show 4 items (2 rows × 2 columns)
+      if (width >= 768 && width < 1024) {
+        return 4;
+      }
+      // 3+ columns (lg+): show 3 items (1 row × 3 columns)
+      return 3;
+    }
+    return 3;
+  };
+
+  const loadMoreNews = () => {
+    const nextPage = currentPage + 1;
+    const startIndex = 0;
+    const endIndex = nextPage * itemsPerPage;
+    
+    setDisplayedNews(allNews.slice(startIndex, endIndex));
+    setCurrentPage(nextPage);
+  };
+
+  // Handle window resize to adjust items per page
+  useEffect(() => {
+    const handleResize = () => {
+      const newItemsPerPage = getItemsPerPage();
+      if (newItemsPerPage !== itemsPerPage) {
+        setItemsPerPage(newItemsPerPage);
+        // Re-calculate displayed news with new items per page
+        const newEndIndex = currentPage * newItemsPerPage;
+        setDisplayedNews(allNews.slice(0, newEndIndex));
+      }
+    };
+
+    // Set initial items per page
+    const initialItemsPerPage = getItemsPerPage();
+    setItemsPerPage(initialItemsPerPage);
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [itemsPerPage, currentPage, allNews]);
+
+  const resetPagination = () => {
+    const newItemsPerPage = getItemsPerPage();
+    setItemsPerPage(newItemsPerPage);
+    setCurrentPage(1);
+    setDisplayedNews(allNews.slice(0, newItemsPerPage));
+  };
 
   // Fetch initial news on component mount
   useEffect(() => {
@@ -41,11 +94,16 @@ export default function Main() {
           image: article.urlToImage || "/news_01.png", // Fallback image
           reporter: article.author || article.source?.name || "Autor desconocido"
         }));
-        setNews(transformedNews);
+        setAllNews(transformedNews);
+        const currentItemsPerPage = getItemsPerPage();
+        setItemsPerPage(currentItemsPerPage);
+        setDisplayedNews(transformedNews.slice(0, currentItemsPerPage));
+        setCurrentPage(1);
       })
       .catch((err) => {
         console.error("Error fetching initial news:", err);
-        setNews([]);
+        setAllNews([]);
+        setDisplayedNews([]);
       })
       .finally(() => {
         setLoader(false);
@@ -71,11 +129,16 @@ export default function Main() {
             image: article.urlToImage || "/news_01.png", // Fallback image
             reporter: article.author || article.source?.name || "Autor desconocido"
           }));
-          setNews(transformedNews);
+          setAllNews(transformedNews);
+          const currentItemsPerPage = getItemsPerPage();
+          setItemsPerPage(currentItemsPerPage);
+          setDisplayedNews(transformedNews.slice(0, currentItemsPerPage));
+          setCurrentPage(1);
         })
         .catch((err) => {
           console.error("Error searching news:", err);
-          setNews([]);
+          setAllNews([]);
+          setDisplayedNews([]);
         })
         .finally(() => {
           setLoader(false);
@@ -94,11 +157,16 @@ export default function Main() {
           </div>
         ) : (
           <>
-            {news.length > 0 ? (
-              <News title="Resultados de la búsqueda" news={news} loader={loader}>
-                <button className="news-cards__button rounded-full w-[288px] h-[64px] mt-[65px] mb-[15px] font-medium">
-                  Ver más
-                </button>
+            {displayedNews.length > 0 ? (
+              <News title="Resultados de la búsqueda" news={displayedNews} loader={loader}>
+                {displayedNews.length < allNews.length && (
+                  <button 
+                    className="news-cards__button rounded-full w-[288px] h-[64px] mt-[65px] mb-[15px] font-medium"
+                    onClick={loadMoreNews}
+                  >
+                    Ver más
+                  </button>
+                )}
               </News>
             ) : (
               <div className="h-[374px]">
