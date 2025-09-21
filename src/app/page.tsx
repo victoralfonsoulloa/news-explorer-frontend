@@ -26,6 +26,7 @@ export default function Main() {
   const [query, setQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [hasSearched, setHasSearched] = useState(false);
 
   // Function to determine items per page based on screen size
   const getItemsPerPage = () => {
@@ -117,6 +118,7 @@ export default function Main() {
     if (search && query.trim()) {
       console.log("Searching for:", query);
       setLoader(true);
+      setHasSearched(true); // Mark that user has performed a search
       newsApi
         .searchNews(query)
         .then((res: any) => {
@@ -161,7 +163,11 @@ export default function Main() {
         ) : (
           <>
             {displayedNews.length > 0 ? (
-              <News title="Resultados de la búsqueda" news={displayedNews} loader={loader}>
+              <News 
+                title={hasSearched ? "Resultados de la búsqueda" : "Últimas noticias"} 
+                news={displayedNews} 
+                loader={loader}
+              >
                 {displayedNews.length < allNews.length && (
                   <button 
                     className="news-cards__button rounded-full w-[288px] h-[64px] mt-[65px] mb-[15px] font-medium"
