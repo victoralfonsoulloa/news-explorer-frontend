@@ -4,12 +4,12 @@
   justify-content: center;
   min-height: 624px;
   column-gap: 56px;
-  padding: 80px 104px;
+  padding: 32px 104px;
 }
 
 .about__photo {
-  min-width: 300px !important;
-  height: 464px !important;
+  max-width: 320px;
+  min-width: 288px;
   object-fit: cover;
   object-position: center;
   align-self: center;
@@ -72,5 +72,18 @@
   }
 }
 
+
 @media screen and (max-width: 576px) {
+  .about {
+    padding-bottom: 50px;
+  }
+
+  .about__info {
+    row-gap: 16px;
+    min-width: 288px;
+  }
+
+  .about__photo {
+    width: 100%;
+  }
 }
