@@ -15,6 +15,7 @@ interface NewsItemData {
   date: string;
   image: string;
   reporter: string;
+  url: string;
 }
 
 export default function Main() {
@@ -92,7 +93,8 @@ export default function Main() {
           description: article.description || "Sin descripción",
           date: new Date(article.publishedAt).toLocaleDateString('es-ES') || new Date().toLocaleDateString('es-ES'),
           image: article.urlToImage || "/news_01.png", // Fallback image
-          reporter: article.author || article.source?.name || "Autor desconocido"
+          reporter: article.author || article.source?.name || "Autor desconocido",
+          url: article.url || "" // Add the article URL
         }));
         setAllNews(transformedNews);
         const currentItemsPerPage = getItemsPerPage();
@@ -127,7 +129,8 @@ export default function Main() {
             description: article.description || "Sin descripción",
             date: new Date(article.publishedAt).toLocaleDateString('es-ES') || new Date().toLocaleDateString('es-ES'),
             image: article.urlToImage || "/news_01.png", // Fallback image
-            reporter: article.author || article.source?.name || "Autor desconocido"
+            reporter: article.author || article.source?.name || "Autor desconocido",
+            url: article.url || "" // Add the article URL
           }));
           setAllNews(transformedNews);
           const currentItemsPerPage = getItemsPerPage();

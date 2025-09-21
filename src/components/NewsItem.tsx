@@ -7,13 +7,32 @@ interface NewsItemProps {
   date: string;
   image: string;
   reporter: string;
+  url: string;
 }
 
 export default function NewsItem(props: NewsItemProps) {
-  const { title, description, date, image, reporter } = props;
+  const { title, description, date, image, reporter, url } = props;
+
+  const handleCardClick = () => {
+    if (url) {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+  };
 
   return (
-    <div className="news-item flex flex-col rounded-[15px] h-[576px] w-full max-w-[400px]">
+    <div 
+      className="news-item flex flex-col rounded-[15px] h-[576px] w-full max-w-[400px] cursor-pointer hover:shadow-lg transition-shadow duration-300"
+      onClick={handleCardClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleCardClick();
+        }
+      }}
+      aria-label={`Leer artículo: ${title}`}
+    >
       <Image
         src={image}
         alt={`Imagen de "${title}"`}

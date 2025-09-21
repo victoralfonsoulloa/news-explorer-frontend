@@ -13,6 +13,7 @@ interface NewsItemData {
   date: string;
   image: string;
   reporter: string;
+  url: string;
 }
 
 interface NewsProps {

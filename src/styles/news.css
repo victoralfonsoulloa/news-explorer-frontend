@@ -61,6 +61,18 @@
   background-color: var(--background-primary);
   box-shadow: 0 0 5px var(--color-extra);
   overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.news-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.news-item:focus {
+  outline: 2px solid var(--button-secondary);
+  outline-offset: 2px;
 }
 
 .news-item__image {
