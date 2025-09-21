@@ -1,17 +1,23 @@
 import Api from "./Api";
 
+interface NewsApiResponse {
+  articles: any[];
+  totalResults: number;
+  status: string;
+}
+
 class NewsApi extends Api {
-  constructor({ baseUrl, headers }: { baseUrl: string; headers: {} }) {
+  constructor({ baseUrl, headers }: { baseUrl: string; headers: Record<string, string> }) {
     super({ baseUrl, headers });
   }
 
-  searchNews(query: string): Promise<Object> {
+  searchNews(query: string): Promise<NewsApiResponse> {
     return super._makeRequest(`&q=${query}`);
   }
 }
 
 // Obtener fechas de búsqueda de noticias (desde - hasta)
-let currentDate = new Date();
+const currentDate = new Date();
 const toDate = currentDate.toISOString();
 currentDate.setDate(currentDate.getDate() - 7);
 const fromDate = currentDate.toISOString();

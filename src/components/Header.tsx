@@ -4,9 +4,9 @@ import SearchBar from "./SearchBar";
 import Navigation from "./Navigation";
 
 interface HeaderProps {
-  setSearch: Function;
+  setSearch: (search: boolean) => void;
   query: string;
-  setQuery: Function;
+  setQuery: (query: string) => void;
 }
 
 

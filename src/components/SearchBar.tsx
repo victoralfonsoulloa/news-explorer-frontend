@@ -2,9 +2,9 @@ import { ChangeEvent, FormEvent } from "react";
 import "@/styles/search.css";
 
 interface SearchBarProps {
-  setSearch: Function;
+  setSearch: (search: boolean) => void;
   query: string;
-  setQuery: Function;
+  setQuery: (query: string) => void;
 }
 
 export default function SearchBar({ setSearch, query, setQuery }: SearchBarProps) {
