@@ -28,7 +28,7 @@ export default function NewsItem(props: NewsItemProps) {
         <span
           className={`news-item__reporter ${robotoSlab.className} font-bold`}
         >
-          {reporter.toLocaleUpperCase()}
+          {reporter?.toLocaleUpperCase() || "AUTOR DESCONOCIDO"}
         </span>
       </div>
     </div>

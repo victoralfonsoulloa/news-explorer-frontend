@@ -49,9 +49,8 @@ export default function About() {
           <br />
           <br />
           Estas son algunas tecnologías con las que trabajo:
-          <br />
-          <Slider />
         </p>
+        <Slider />
       </div>
     </section>
   );
