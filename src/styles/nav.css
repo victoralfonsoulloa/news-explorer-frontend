@@ -43,9 +43,8 @@
   cursor: pointer;
 }
 
-.navigation__button:hover {
-  background-color: var(--color-secondary);
-  color: var(--color-primary);
+.navigation__button:hover .navigation__button-text {
+  filter: invert(100%);
   transform: scale(1.05);
 }
 
