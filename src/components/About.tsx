@@ -6,7 +6,12 @@ import Slider from "./Slider";
 export default function About() {
   return (
     <section className="about flex">
-      <div className="svg-wrapper">
+      <a
+        href="https://www.linkedin.com/in/victor-ulloa94/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="svg-wrapper cursor-pointer"
+      >
         <svg
           width="100%"
           height="100%"
@@ -30,15 +35,16 @@ export default function About() {
           alt="Profile picture"
           className="about__photo"
         />
-      </div>
+      </a>
       <div className="about__info flex flex-col w-[600px]">
         <h3 className={`about__title ${robotoSlab.className}`}>
           Acerca del autor
         </h3>
         <p className="about__description">
-          ¡Hola! Soy Victor, Ingeniero de Software Asociado en Guild. Soy
-          apasionado por la programación y un aprendiz de por vida, impulsado
-          por el deseo de construir y crear soluciones innovadoras.
+          ¡Hola! Soy Victor, Ingeniero de Software Asociado en Guild, basado en
+          Denver, Colorado. Soy apasionado por la programación y un aprendiz de
+          por vida, impulsado por el deseo de construir y crear soluciones
+          innovadoras.
           <br />
           <br />
           Con experiencia en las industrias de hospitalidad y aerolíneas, aporto

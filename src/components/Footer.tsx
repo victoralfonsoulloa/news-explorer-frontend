@@ -17,7 +17,7 @@ export default function Footer() {
         <ul className="footer__social flex">
           <li className="footer__social-link">
             <div></div>
-            <Link href="https://github.com/victorulloa" target="_blank">
+            <Link href="https://github.com/victoralfonsoulloa" target="_blank">
               <FaGithub />
             </Link>
           </li>
@@ -28,7 +28,7 @@ export default function Footer() {
           </li>
           <li className="footer__social-link">
             <Link
-              href="https://www.linkedin.com/in/victorulloa94/"
+              href="https://www.linkedin.com/in/victor-ulloa94/"
               target="_blank"
             >
               <FaLinkedin />

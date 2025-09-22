@@ -12,13 +12,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
-  height: 300px;
+  max-width: 275px;
   object-fit: cover;
   object-position: center center;
-  border-radius: 50%;
   z-index: 1;
-  aspect-ratio: 1/1;
+  clip-path: circle();
 }
 
 .svg-wrapper {
