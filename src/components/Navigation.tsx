@@ -18,7 +18,7 @@ export default function Navigation() {
   useEffect(() => {
     const handleKeyDown = () => setMenu(false);
     document.addEventListener("keydown", handleKeyDown);
-    
+
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };

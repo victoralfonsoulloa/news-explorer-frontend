@@ -9,9 +9,8 @@ interface HeaderProps {
   setQuery: (query: string) => void;
 }
 
-
 export default function Header(props: HeaderProps) {
-const { query, setQuery, setSearch } = props;
+  const { query, setQuery, setSearch } = props;
 
   return (
     <header className="header flex flex-col pt-[80px]">
@@ -26,7 +25,7 @@ const { query, setQuery, setSearch } = props;
           Encuentra las últimas noticias sobre cualquier tema y guárdalas en tu
           cuenta personal.
         </p>
-       <SearchBar setSearch={setSearch} query={query} setQuery={setQuery} />
+        <SearchBar setSearch={setSearch} query={query} setQuery={setQuery} />
       </div>
     </header>
   );

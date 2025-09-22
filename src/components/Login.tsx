@@ -16,28 +16,30 @@ export default function Login({ onClose }: LoginProps) {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    
+
     // Test user credentials
     const TEST_EMAIL = "test@test.com";
     const TEST_PASSWORD = "password123";
-    
+
     if (data.email === TEST_EMAIL && data.password === TEST_PASSWORD) {
       // Successful login
       setLogged(true);
       console.log("User logged in successfully!");
-      
+
       // Close the popup automatically
       if (onClose) {
         onClose();
       }
-      
+
       // In a real app, you would:
       // 1. Send credentials to backend
       // 2. Receive and store JWT token
       // 3. Set user data in context
     } else {
       console.log("Invalid credentials! Use: test@test.com / password123");
-      alert("Invalid credentials! Use:\nEmail: test@test.com\nPassword: password123");
+      alert(
+        "Invalid credentials! Use:\nEmail: test@test.com\nPassword: password123"
+      );
     }
   };
 

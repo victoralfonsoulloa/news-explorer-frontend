@@ -4,7 +4,10 @@ import Link from "next/link";
 import { MouseEvent, useContext } from "react";
 import { usePathname } from "next/navigation";
 import { CurrentUserContext } from "@/contexts/CurrentUserContext";
-import { SavedArticlesContext, SavedArticle } from "@/contexts/SavedArticlesContext";
+import {
+  SavedArticlesContext,
+  SavedArticle,
+} from "@/contexts/SavedArticlesContext";
 
 interface NewsItemProps {
   id?: number;
@@ -40,18 +43,19 @@ export default function NewsItem(props: NewsItemProps) {
   const { setNewsLength, savedNews, setSavedNews, saveArticle, removeArticle } =
     useContext(SavedArticlesContext)!;
   const pathname = usePathname();
-  
+
   // Handle date formatting
-  const displayDate = publishedAt 
+  const displayDate = publishedAt
     ? new Date(Date.parse(publishedAt)).toDateString()
-    : date || new Date().toLocaleDateString('es-ES');
+    : date || new Date().toLocaleDateString("es-ES");
 
   // Handle image URL
   const displayImage = urlToImage || image || "/not-found_icon.png";
-  
+
   // Handle source/reporter
-  const displayReporter = reporter || 
-    (typeof source === "string" ? source : source.name) || 
+  const displayReporter =
+    reporter ||
+    (typeof source === "string" ? source : source.name) ||
     "Autor desconocido";
 
   const handleSuccessMessage = (news: SavedArticle[]) => {

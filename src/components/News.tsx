@@ -31,12 +31,10 @@ export default function News(props: NewsProps) {
             {title}
           </h3>
           <div className="news-cards__container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center w-full max-w-[1200px]">
-            {news && news.map((item, index) => (
-              <NewsItem 
-                key={item.id || `news-${index}`} 
-                {...item} 
-              />
-            ))}
+            {news &&
+              news.map((item, index) => (
+                <NewsItem key={item.id || `news-${index}`} {...item} />
+              ))}
           </div>
 
           {children}

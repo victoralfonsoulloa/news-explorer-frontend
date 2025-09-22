@@ -30,7 +30,9 @@
   align-items: center;
   background-color: black;
   color: var(--color-secondary);
-  transition: all 0.5s, color 0.8s;
+  transition:
+    all 0.5s,
+    color 0.8s;
   @starting-style {
     height: 0;
     background-color: transparent;

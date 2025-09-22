@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext } from "react";
 
 export interface SavedArticle {
   id?: number;
@@ -23,4 +23,6 @@ export interface SavedArticlesContextType {
   removeArticle: (articleId: string) => Promise<void>;
 }
 
-export const SavedArticlesContext = createContext<SavedArticlesContextType | undefined>(undefined);
+export const SavedArticlesContext = createContext<
+  SavedArticlesContextType | undefined
+>(undefined);

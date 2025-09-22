@@ -26,9 +26,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang="es">
       <body className={`${roboto.className} antialiased`}>
-        <AppProviders>
-          {children}
-        </AppProviders>
+        <AppProviders>{children}</AppProviders>
         <Footer />
       </body>
     </html>

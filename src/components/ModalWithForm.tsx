@@ -36,10 +36,12 @@ export default function ModalWithForm(props: ModalWithFormProps) {
               ¿No tienes cuenta?{" "}
               <span
                 className="modal__link"
-                onClick={() => openPopup({ 
-                  title: "Inscribirse", 
-                  children: <Register /> 
-                })}
+                onClick={() =>
+                  openPopup({
+                    title: "Inscribirse",
+                    children: <Register />,
+                  })
+                }
               >
                 Regístrate
               </span>
@@ -49,10 +51,12 @@ export default function ModalWithForm(props: ModalWithFormProps) {
               ¿Ya tienes cuenta?{" "}
               <span
                 className="modal__link"
-                onClick={() => openPopup({ 
-                  title: "Iniciar sesión", 
-                  children: <Login /> 
-                })}
+                onClick={() =>
+                  openPopup({
+                    title: "Iniciar sesión",
+                    children: <Login />,
+                  })
+                }
               >
                 Inicia sesión
               </span>

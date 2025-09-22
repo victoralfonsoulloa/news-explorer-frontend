@@ -28,7 +28,7 @@ export default function Menu({ openPopup, closePopup }: MenuProps) {
         <NavItem title="Inicio" link="/" />
         {logged && <NavItem title="Artículos guardados" link="/saved-news" />}
       </ul>
-      
+
       {logged ? (
         <button
           className="navigation__button w-[176px] p-[12px] rounded-full hover:bg-current transition-all duration-300 font-medium"

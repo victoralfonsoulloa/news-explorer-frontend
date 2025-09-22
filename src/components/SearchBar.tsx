@@ -7,7 +7,11 @@ interface SearchBarProps {
   setQuery: (query: string) => void;
 }
 
-export default function SearchBar({ setSearch, query, setQuery }: SearchBarProps) {
+export default function SearchBar({
+  setSearch,
+  query,
+  setQuery,
+}: SearchBarProps) {
   const handleSearch = (e: FormEvent) => {
     e.preventDefault();
     setSearch(true);

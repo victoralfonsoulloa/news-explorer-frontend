@@ -13,20 +13,16 @@ interface AppProvidersProps {
 function SavedArticlesWrapper({ children }: { children: ReactNode }) {
   const { logged } = useContext(CurrentUserContext);
   const userId = logged ? "test-user-123" : undefined; // Test user ID
-  
+
   return (
-    <SavedArticlesProvider userId={userId}>
-      {children}
-    </SavedArticlesProvider>
+    <SavedArticlesProvider userId={userId}>{children}</SavedArticlesProvider>
   );
 }
 
 export default function AppProviders({ children }: AppProvidersProps) {
   return (
     <CurrentUserProvider>
-      <SavedArticlesWrapper>
-        {children}
-      </SavedArticlesWrapper>
+      <SavedArticlesWrapper>{children}</SavedArticlesWrapper>
     </CurrentUserProvider>
   );
 }

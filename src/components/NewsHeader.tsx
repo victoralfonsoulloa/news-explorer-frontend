@@ -8,7 +8,10 @@ interface NewsHeaderProps {
   savedArticles?: SavedArticle[];
 }
 
-export default function NewsHeader({ newsCount, savedArticles }: NewsHeaderProps) {
+export default function NewsHeader({
+  newsCount,
+  savedArticles,
+}: NewsHeaderProps) {
   // Extract unique keywords from saved articles
   const getKeywordsText = () => {
     if (!savedArticles || savedArticles.length === 0) {
@@ -16,11 +19,13 @@ export default function NewsHeader({ newsCount, savedArticles }: NewsHeaderProps
     }
 
     // Get unique keywords, filter out empty/undefined ones
-    const uniqueKeywords = [...new Set(
-      savedArticles
-        .map(article => article.keyword)
-        .filter(keyword => keyword && keyword.trim() !== "")
-    )];
+    const uniqueKeywords = [
+      ...new Set(
+        savedArticles
+          .map((article) => article.keyword)
+          .filter((keyword) => keyword && keyword.trim() !== "")
+      ),
+    ];
 
     if (uniqueKeywords.length === 0) {
       return "No hay palabras clave disponibles.";
