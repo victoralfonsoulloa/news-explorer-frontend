@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --background-primary: #ffffff;
+  --background-secondary: #f5f6f7;
+
+  --color-primary: #000000;
+  --color-secondary: #ffffff;
+  --color-tertiary: #2f71e5;
+  --color-extra: #b6bcbf;
+
+  --button-primary: #2f71e5;
+  --button-primary-hover: #347eff;
+  --button-secondary: #ffffff;
+  --button-secondary-hover: #e8e8e8;
+
+  --font-size-xxsmall: 0.75rem; /* 12px */
+  --font-size-xsmall: 0.875rem; /* 14px */
+  --font-size-small: 1rem; /* 16px */
+  --font-size-neutral: 1.125rem; /* 18px */
+  --font-size-medium: 1.25rem; /* 20px */
+  --font-size-large: 1.625rem; /* 26px */
+  --font-size-xlarge: 2.5rem; /* 40px */
+  --font-size-xxlarge: 3.75rem; /* 60px */
+
+  --font-size-extra-1: 1.375rem; /* 22px */
+  --font-size-extra-2: 1.5rem; /* 24px */
+  --font-size-extra-3: 1.875rem; /* 30px */
+  --font-size-extra-4: 2rem; /* 32px */
+  --font-size-extra-5: 2.25rem; /* 36px */
+  --font-size-xxsmall: 0.75rem; /* 12px */
+  --font-size-xsmall: 0.875rem; /* 14px */
+  --font-size-small: 1rem; /* 16px */
+  --font-size-neutral: 1.125rem; /* 18px */
+  --font-size-medium: 1.25rem; /* 20px */
+  --font-size-large: 1.625rem; /* 26px */
+  --font-size-xlarge: 2.5rem; /* 40px */
+  --font-size-xxlarge: 3.75rem; /* 60px */
+
+  --font-size-extra-1: 1.375rem; /* 22px */
+  --font-size-extra-2: 1.5rem; /* 24px */
+  --font-size-extra-3: 1.875rem; /* 30px */
+  --font-size-extra-4: 2rem; /* 32px */
+  --font-size-extra-5: 2.25rem; /* 36px */
+
+  --line-height-xxsmall: 1.067;
+  --line-height-xsmall: 1.1;
+  --line-height-small: 1.15;
+  --line-height-neutral: 1.2;
+  --line-height-medium: 1.25;
+  --line-height-large: 1.333;
+  --line-height-xlarge: 1.375;
+  --line-height-xxlarge: 1.5;
+  --line-height-extra: 1.714;
+  --line-height-extra-2: 2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  margin: auto;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+}
