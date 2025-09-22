@@ -22,7 +22,7 @@ export default function News(props: NewsProps) {
       {loader ? (
         <Preloader />
       ) : (
-        <section className="news-cards flex flex-col px-[104px] py-[65px]">
+        <section className="news-cards flex flex-col px-[104px] py-[65px] items-center">
           <h3
             className={`news-cards__title ${
               robotoSlab.className
@@ -30,7 +30,7 @@ export default function News(props: NewsProps) {
           >
             {title}
           </h3>
-          <div className="news-cards__container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center w-full">
+          <div className="news-cards__container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center w-full max-w-[1200px]">
             {news && news.map((item, index) => (
               <NewsItem 
                 key={item.id || `news-${index}`} 
