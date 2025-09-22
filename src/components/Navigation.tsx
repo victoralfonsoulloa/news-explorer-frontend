@@ -53,7 +53,7 @@ export default function Navigation() {
           News Explorer
         </span>
         <nav className="navigation__menu hidden md:flex font-medium h-full">
-          <Menu openPopup={openPopup} />
+          <Menu openPopup={openPopup} closePopup={closePopup} />
         </nav>
 
         <Image
@@ -68,7 +68,7 @@ export default function Navigation() {
 
       {menu && (
         <nav className="navigation__menu-mobile flex flex-col w-full md:hidden font-medium">
-          <Menu openPopup={openPopup} />
+          <Menu openPopup={openPopup} closePopup={closePopup} />
         </nav>
       )}
 

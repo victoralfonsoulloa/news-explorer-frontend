@@ -5,20 +5,11 @@ import { robotoSlab } from "@/vendor/fonts";
 import { ReactNode } from "react";
 import Preloader from "@/components/PreLoader";
 import NewsItem from "./NewsItem";
-
-interface NewsItemData {
-  id: number;
-  title: string;
-  description: string;
-  date: string;
-  image: string;
-  reporter: string;
-  url: string;
-}
+import { SavedArticle } from "@/contexts/SavedArticlesContext";
 
 interface NewsProps {
   title?: string;
-  news?: NewsItemData[];
+  news?: SavedArticle[];
   children?: ReactNode;
   loader: boolean;
 }

@@ -3,6 +3,7 @@ import { FC, PropsWithChildren } from "react";
 import { roboto } from "@/vendor/fonts";
 import "@/styles/globals.css";
 import Footer from "@/components/Footer";
+import AppProviders from "@/contexts/AppProviders";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +26,9 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang="es">
       <body className={`${roboto.className} antialiased`}>
-        {children}
+        <AppProviders>
+          {children}
+        </AppProviders>
         <Footer />
       </body>
     </html>

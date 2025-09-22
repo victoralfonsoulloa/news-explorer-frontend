@@ -7,20 +7,11 @@ import About from "@/components/About";
 import Preloader from "@/components/PreLoader";
 import { newsApi } from "@/utils/NewsApi";
 import { useEffect, useState } from "react";
-
-interface NewsItemData {
-  id: number;
-  title: string;
-  description: string;
-  date: string;
-  image: string;
-  reporter: string;
-  url: string;
-}
+import { SavedArticle } from "@/contexts/SavedArticlesContext";
 
 export default function Main() {
-  const [allNews, setAllNews] = useState<NewsItemData[]>([]);
-  const [displayedNews, setDisplayedNews] = useState<NewsItemData[]>([]);
+  const [allNews, setAllNews] = useState<SavedArticle[]>([]);
+  const [displayedNews, setDisplayedNews] = useState<SavedArticle[]>([]);
   const [search, setSearch] = useState(false);
   const [loader, setLoader] = useState(false);
   const [query, setQuery] = useState("");
@@ -89,11 +80,15 @@ export default function Main() {
         const articles = res.articles || [];
         // Transform API data to match our interface
         const transformedNews = articles.map((article: any, index: number) => ({
-          id: index + 1, // Generate unique ID
+          id: index + 1, // Generate unique ID for localStorage compatibility
+          keyword: "tecnología", // Default search keyword
           title: article.title || "Sin título",
           description: article.description || "Sin descripción",
+          publishedAt: article.publishedAt,
           date: new Date(article.publishedAt).toLocaleDateString('es-ES') || new Date().toLocaleDateString('es-ES'),
+          urlToImage: article.urlToImage,
           image: article.urlToImage || "/news_01.png", // Fallback image
+          source: article.source || { name: "Fuente desconocida" },
           reporter: article.author || article.source?.name || "Autor desconocido",
           url: article.url || "" // Add the article URL
         }));
@@ -126,11 +121,15 @@ export default function Main() {
           const articles = res.articles || [];
           // Transform API data to match our interface
           const transformedNews = articles.map((article: any, index: number) => ({
-            id: index + 1, // Generate unique ID
+            id: index + 1, // Generate unique ID for localStorage compatibility
+            keyword: query, // Use the search query as keyword
             title: article.title || "Sin título",
             description: article.description || "Sin descripción",
+            publishedAt: article.publishedAt,
             date: new Date(article.publishedAt).toLocaleDateString('es-ES') || new Date().toLocaleDateString('es-ES'),
+            urlToImage: article.urlToImage,
             image: article.urlToImage || "/news_01.png", // Fallback image
+            source: article.source || { name: "Fuente desconocida" },
             reporter: article.author || article.source?.name || "Autor desconocido",
             url: article.url || "" // Add the article URL
           }));
