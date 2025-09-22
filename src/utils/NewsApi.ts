@@ -28,7 +28,7 @@ class NewsApi extends Api {
   }
 
   searchNews(query: string): Promise<NewsApiResponse> {
-    return super._makeRequest<NewsApiResponse>(`&q=${query}`);
+    return super._makeRequest<NewsApiResponse>(`q=${encodeURIComponent(query)}`);
   }
 }
 
@@ -39,8 +39,8 @@ currentDate.setDate(currentDate.getDate() - 7);
 const fromDate = currentDate.toISOString();
 
 export const newsApi = new NewsApi({
-  baseUrl: `https://newsapi.org/v2/everything?from=${fromDate}&to=${toDate}&sortBy=publishedAt&language=es`,
+  baseUrl: '/api/news?',
   headers: {
-    Authorization: `Bearer ${process.env.NEXT_PUBLIC_NEWS_API_KEY}`,
+    'Content-Type': 'application/json',
   },
 });
